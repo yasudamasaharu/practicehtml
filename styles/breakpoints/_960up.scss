@@ -1,0 +1,29 @@
+.slide{
+  &__item {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 1100px;
+  & a {
+    font-size: 1rem;
+  }
+  }
+
+  &__navi {
+    max-width: 530px;
+    padding: 20px;
+    background-color: $cWhite;
+
+    &-li {
+      display: flex;
+      justify-content: center;
+      & a {
+        width: 100px;
+      }
+    }
+  }
+
+  &__right-navi {
+    max-width: 530px;
+  }
+}
