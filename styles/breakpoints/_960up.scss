@@ -27,3 +27,66 @@
     max-width: 530px;
   }
 }
+
+.medical-search__navi {
+  display: flex;
+  width: 100vw;
+  height: 200px;
+
+  &-item {
+    width: 25vw;
+
+    &:nth-child(1) {
+      @include ms-navi-li-color(1);
+    }
+    &:nth-child(2) {
+      @include ms-navi-li-color(1);
+    }
+    &:nth-child(3) {
+      @include ms-navi-li-color(1);
+    }
+    &:nth-child(4) {
+      @include ms-navi-li-color(1);
+    }
+    &:nth-child(5) {
+      @include ms-navi-li-color(2);
+    }
+
+  }
+
+  &-body {
+    flex-direction: column;
+    width: 100%;
+  }
+  &-img {
+    width: 100%;
+  }
+  &-title {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.4rem;
+  }
+  &-sub-title {
+    font-size: 1rem;
+  }
+
+  &-ul {
+    flex-wrap: wrap;
+    justify-content:space-between;
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  &-li {
+    width: 100%;
+    margin-bottom: 10px;
+
+    &.harf {
+      width: calc(50% - 5px) !important;
+    }
+  }
+
+}
+
+

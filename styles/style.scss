@@ -3,6 +3,12 @@
 @import './modules/mixin';
 @import './modules/header';
 @import './modules/sliderContainer';
+@import './modules/news';
+@import './modules/medical-aim';
+@import './modules/medical-search';
+@import './modules/specialty';
+@import './modules/introduction';
+@import './modules/recruit';
 
 @media (min-width: 600px) {
   @import "breakpoints/600up";

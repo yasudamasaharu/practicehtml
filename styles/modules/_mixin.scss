@@ -1,3 +1,10 @@
+@mixin icon ($img) {
+  background-image: url($img);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
 @mixin iconsStyle ($imgPath) {
     .slide__navi-li-icon {
       display: block;
@@ -5,5 +12,59 @@
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
+  }
+}
+
+
+@mixin arrowIcon ($color) {
+  content:"\f0a9";
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  color: $color;
+}
+
+
+@mixin medicalAimColor ($color) {
+  .medical-aim__navi-title{
+    color: $color;
+    &::after {
+      background-color: $color;
+    }
+  }
+  .medical-aim__navi-li{
+    border: 1px solid $color;
+    & a {
+      color: $color;
+    }
+  }
+  .medical-aim__navi-icon {
+    border: 1px solid $color;
+    background-color: $color;
+  }
+}
+
+@mixin ms-navi-item-bgc($start, $end){
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, $start, $end);
+}
+
+
+// medical-search-naviのliの背景色
+@mixin ms-navi-li-color ($liNum){
+.medical-search__navi-li {
+    width: calc(100% / $liNum - 5px);
+    border: 1px solid $cWhite;
+  }
+}
+
+
+@mixin sp-navi-li-icon ($path) {
+  .specialty__li-icon {
+    background-image: url($path);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
 }

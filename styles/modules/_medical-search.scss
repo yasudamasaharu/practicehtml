@@ -1,0 +1,106 @@
+.medical-search {
+  &__navi {
+    width: 100%;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: 0 10px;
+      width: 100vw;
+      height: 25vh;
+      margin-bottom: 3vh;
+      cursor:pointer;
+      transition: all .3s;
+
+      &:nth-child(1) {
+        @include ms-navi-item-bgc(rgb(146,217,240), rgb(18,136,245));
+        @include ms-navi-li-color(2);
+        .medical-search__navi-li{
+          background-color: $msNaviLiBGC1;
+        }
+      }
+      &:nth-child(2) {
+        @include ms-navi-item-bgc(rgb(163,234,196), rgb(42,186,132));
+        @include ms-navi-li-color(3);
+        .medical-search__navi-li{
+          background-color:  $msNaviLiBGC2;
+        }
+      }
+      &:nth-child(3) {
+        @include ms-navi-item-bgc(rgb(252,214,191), rgb(255,164,145));
+        @include ms-navi-li-color(2);
+        .medical-search__navi-li{
+          background-color: $msNaviLiBGC3;
+        }
+      }
+      &:nth-child(4) {
+        @include ms-navi-item-bgc(rgb(234, 201, 237), rgb(145, 104, 250));
+        @include ms-navi-li-color(2);
+        .medical-search__navi-li{
+          background-color:$msNaviLiBGC4;
+        }
+      }
+      &:nth-child(5) {
+        @include ms-navi-item-bgc(rgb(248, 217, 170), rgb(245, 188, 143));
+        @include ms-navi-li-color(4);
+        .medical-search__navi-li{
+          background-color: $msNaviLiBGC5;
+        }
+      }
+
+      &:hover {
+        opacity: .7;
+      }
+
+    }
+    &-body {
+      display: flex;
+      width: 100%;
+      height: 20vh;
+    }
+    
+    &-img {
+      margin-top: -10px;
+      width: 60%;
+      height: 100%;
+      border-radius: 10px;
+      background-color: $cBlue;
+    }
+
+    &-title {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+      width: 40%;
+      height: 100%;
+      font-size: 1.2rem;
+      justify-content: center;
+      color: $cWhite;
+    }
+
+    &-sub-title {
+      font-size: .7rem;
+    }
+
+
+    &-ul {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+    
+    &-li {
+      padding: 5px 0;
+      text-align: center;
+      border-radius: 20px;
+      white-space: nowrap;
+
+      & > a {
+        font-size: .7rem;
+        color: $cWhite;
+      }
+    }
+  }
+}

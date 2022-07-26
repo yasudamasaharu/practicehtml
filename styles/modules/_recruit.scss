@@ -1,0 +1,57 @@
+.recruit {
+
+  &__container{
+    padding: 0 10px;
+    width: 100%;
+    background-image: linear-gradient(to right, rgb(140, 140, 243) , purple);
+  }
+  &__title{
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    background-color: blue;
+    font-size: 3rem;
+    color: $cWhite;
+  }
+  
+  &__sub-title{
+    display: inline-block;
+    width: 100%;
+    background-color: red;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  &__item-wrapper{
+
+  }
+  &__item{
+
+  }
+  
+  &__img{
+
+  }
+  &__text{
+
+  }
+  &__item{
+
+  }
+  
+  &__img{
+
+  }
+  &__text{
+
+  }
+  &__item{
+
+  }
+  
+  &__img{
+
+  }
+  &__text{
+
+  }
+}

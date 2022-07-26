@@ -4,10 +4,13 @@
     height: 70vh;
     background-color: lightpink;
   }
+  &__item {
+    margin-bottom: 25px;
+  }
   &__navi {
     width: 100vw;
     border-radius: 33px;
-    margin: 0 auto;
+    margin: 10px auto;
     &-ul {
       display: flex;
       flex-wrap: wrap;
@@ -24,9 +27,18 @@
       height: auto;
       background-color: $naviBGC;
       border-radius: 10px;
+      border: 1px solid $naviBGC;
       // background-color: rgb(2,198,199);
       white-space: nowrap;
-  
+      transition: all .3s;
+
+      &:hover {
+        background-color: $cWhite;
+
+        & a {
+          color: $naviBGC;
+        }
+      }
   
       &-icon {
         display: block;
@@ -41,6 +53,7 @@
         text-decoration: none;
         color: $naviFC;
         font-size: $naviFS;
+        font-weight: 500;
       }
   
   
@@ -140,28 +153,58 @@
     }
 
     &-comment {
+      position: relative;
+      padding-left: 1rem;
       margin-top: 10px;
       color: $cRed;
+
+      &::before {
+        content:"❇︎";
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
     }
+
   }
 
   &__right-link{
+    padding: 0 10px;
     display: flex;
     justify-content: space-between;
 
     &-item {
+      position: relative;
       margin-top: 10px;
       padding: 10px 20px;
-      width: 40%;
+      width: 47%;
       border-radius: 30px;
       background-color: $cAqua;
+      cursor: pointer;
+      transition: all .3s;
+
+      &:hover {
+        background-color: $cBlue;
+         & a {
+          color: $cWhite;
+        }
+      }
 
       & a {
         color: $cBlack;
         font-weight: bold;
       }
+
+      &::after {
+        @include arrowIcon($cWhite);
+        top: 0;
+        right: 5px;
+        background-color: transplant;
+        transform: translate(-50%, 60%);
+      }
+
     }
-  }
+  } 
 }
       
 
