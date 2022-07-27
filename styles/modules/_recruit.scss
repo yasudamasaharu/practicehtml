@@ -1,57 +1,74 @@
 .recruit {
 
   &__container{
-    padding: 0 10px;
     width: 100%;
-    background-image: linear-gradient(to right, rgb(140, 140, 243) , purple);
+    background-image: linear-gradient(to right, rgb(15, 116, 236) , rgb(91, 205, 245));
   }
+
   &__title{
     display: flex;
     flex-direction: column;
-    max-width: 250px;
-    background-color: blue;
     font-size: 3rem;
+    padding-bottom: 20px; 
     color: $cWhite;
   }
   
   &__sub-title{
-    display: inline-block;
-    width: 100%;
-    background-color: red;
+    padding-left: 10px;
     font-size: 1.2rem;
-    text-align: center;
   }
-  &__item-wrapper{
-
+  &__item-wrapper {
+    padding: 0 10px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
-  &__item{
 
+  &__item {
+    position: relative;
+    margin-bottom: 20px;
+    width: 45%;
+    height: 100px;
+    background-color: rgb(163, 148, 148);
+    cursor: pointer;
+
+    &:nth-child(1) {
+      .recruit__text {
+        background-color: rgb(55, 7, 248);
+      }
+    }
+    
+    &:nth-child(2) {
+      .recruit__text {
+        background-color: rgb(177, 202, 255);
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 30px;
+      .recruit__text {
+        background-color: rgb(255, 123, 145);
+      }
+    }
   }
   
-  &__img{
+  &__img {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(248, 247, 244);
+    // background-image: url();
+  }
+  &__text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px 0 5px .7rem;
+    width: 100%;
+    font-size: .7rem;
+    font-weight: bold;
+    color: $cWhite;
 
   }
-  &__text{
-
-  }
-  &__item{
-
-  }
-  
-  &__img{
-
-  }
-  &__text{
-
-  }
-  &__item{
-
-  }
-  
-  &__img{
-
-  }
-  &__text{
-
-  }
-}
+}  
