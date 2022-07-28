@@ -24,6 +24,14 @@
   color: $color;
 }
 
+@mixin circleChevronIcon ($color) {
+  content:"\f138";
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  color: $color;
+}
+
 
 @mixin medicalAimColor ($color) {
   .medical-aim__navi-title{
