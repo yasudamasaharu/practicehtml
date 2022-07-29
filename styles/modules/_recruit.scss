@@ -30,17 +30,23 @@
     position: relative;
     margin-bottom: 20px;
     width: 45%;
-    height: 100px;
+    height: 130px;
     background-color: rgb(163, 148, 148);
     cursor: pointer;
 
     &:nth-child(1) {
+      .recruit__img {
+        @include bgImage('../../imgs/recruit01.jpg', cover)
+      }
       .recruit__text {
         background-color: rgb(55, 7, 248);
       }
     }
     
     &:nth-child(2) {
+      .recruit__img {
+        @include bgImage('../../imgs/recruit03.jpg', cover);
+      }
       .recruit__text {
         background-color: rgb(177, 202, 255);
       }
@@ -48,6 +54,9 @@
 
     &:last-child {
       margin-bottom: 30px;
+      .recruit__img {
+        @include bgImage('../../imgs/recruit04.jpg', cover);
+      }
       .recruit__text {
         background-color: rgb(255, 123, 145);
       }

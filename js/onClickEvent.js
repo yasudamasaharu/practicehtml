@@ -1,25 +1,15 @@
-const btns = document.querySelectorAll('.footer__site-map-item-title');
+const btns = document.querySelectorAll('button.footer__site-map-item-title');
 
 
-btns.forEach((el, num) => {
-  if(el.classList.contains('link') == false){
-    el.addEventListener('click', () => {
-      let targetNavi =  el.nextElementSibling;
-      targetNavi.classList.toggle('active');
-      
-      if(targetNavi.classList.contains('active') == true) {
-        naviOpen(targetNavi);
-      } else {
-        targetNavi.classList.remove('active')
-        naviClose(targetNavi);
-      }
-      let activeNum = num;
-    })
-    
-  }
-}) 
-const ul = document.querySelector('.footer__site-map-ul');
-const icon = document.querySelector('.footer__site-map-title-icon');
+btns.forEach((el) => {
+  el.addEventListener('click', () => {
+    let icon = el.querySelector('.footer__site-map-item-icon');
+    let clickTarget = el.nextElementSibling;
+    clickTarget.classList.toggle('active');
+    icon.classList.toggle('active');
+    clickTarget.classList.contains('active') ? naviOpen(clickTarget) : naviClose(clickTarget);
+  })
+})
 
 const naviOpen = (el) => {
   el.style.height = 'auto';
@@ -46,21 +36,5 @@ const naviClose = (el) => {
   el.style.height = 0;
 }
 
-// const lines = document.querySelectorAll('.footer__site-map-btn-sp');
-// const text = document.querySelector('.footer__site-map-btn-text');
-// const siteMap = document.querySelector('.footer__site-map');
 
-// btn.addEventListener('click', () => {
-//   btn.classList.toggle('active');
-
-//   if(btn.classList.contains('active') == true) {
-//    text.innerText = "閉じる"
-//   }　else {
-//     text.innerText = "開く"
-//   }
-//   // lines.forEach(el => {
-//   //   el.classList.toggle('active')
-//   // });
-//   siteMap.classList.toggle('active')
-// })
 

@@ -24,6 +24,13 @@
   color: $color;
 }
 
+@mixin bgImage ($imgPath, $size) {
+  background-image: url($imgPath);
+  background-position: center;
+  background-size: $size;
+  background-repeat: no-repeat;
+}
+
 @mixin circleChevronIcon ($color) {
   content:"\f138";
   position: absolute;

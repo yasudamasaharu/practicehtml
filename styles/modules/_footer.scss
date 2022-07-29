@@ -1,7 +1,7 @@
 button {
 	background: none;
 	border: none;
-	outline: none;
+	outline: none !important;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -43,14 +43,9 @@ button {
 
 
   &__site-map {
-    // display: none;
-    // transition: all .5s;
 
     &.active {
-      // display: block;
 
-      .footer__site-map-container {
-      }
     }
 
     &-btn {
@@ -131,6 +126,20 @@ button {
       text-align: left;
       color: $cBlue;
       border-bottom: 1px solid $cGray;
+      cursor: pointer;
+
+      &:hover {
+        color: $cPink;
+        &.link {
+          &::after{
+            @include circleChevronIcon($cPink);
+          }
+        }
+
+        &::before {
+          background-color: $cPink;
+        }
+      }
       
       &.link {
         &::after{
@@ -196,45 +205,47 @@ button {
   
   
     }
-  }
-  &-item-ul {
-    width: 100%;
-    // height: 0;
-    // opacity: 0.3;
-    // height: auto;
-    overflow: hidden;
-    // display: none;
-  }
-  &-item-li {
-    padding: 10px 0;
-    border-bottom: 1px solid $cGray;
-    & a {
-      display: flex;
-      justify-content: space-between;
-      padding: 0 10px;
-      width:100%;
-      color: $cBlue;
+
     }
-  }
-  }
+    &-item-ul {
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+    }
+    &-item-li {
+      position: relative;
+      width: 100%;
+      padding: 10px 0 10px 10px;
+      border-bottom: 1px solid $cGray;
 
-  // &__site-map-item-wrap {
-  //   width: 100%;
-  //   position: relative;
-  // }
-  
- 
+      & a {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+        width:100%;
+        color: $cBlue;
 
-
-  
-}
-
-.footer__site-map-icon {
-  position: relative;
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  &::after {
-    @include circleChevronIcon($cBlue)
+        .footer__site-map-icon {
+          position: relative;
+          display: inline-block;
+          width: 1rem;
+          height: 1rem;
+          &::after {
+            @include circleChevronIcon($cBlue)
+          }
+        }
+      }
+      
+      &:hover {
+        & > a {
+          color: $cPink;
+          .footer__site-map-icon{
+           &::after {
+             @include circleChevronIcon($cPink)
+            }
+          }
+        }
+      }
+    }
   }
 }
