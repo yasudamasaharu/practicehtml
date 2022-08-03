@@ -9,10 +9,9 @@ button {
 
 
 .footer {
-  // display: none;
   width: 100%;
   height: auto;
-  // overflow: hidden;
+
   
   &__navi {
     width: 100%;
@@ -39,13 +38,14 @@ button {
       border-left: 1px solid $cGray;
     }
   }
-
-
-
   &__site-map {
-
+    width: 100%;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    
     &.active {
-
+      visibility: visible;
     }
 
     &-btn {
@@ -247,5 +247,75 @@ button {
         }
       }
     }
+  }
+  &__address {
+    margin: 30px auto 0;
+    width: 80%;
+    &-dl {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &-title {
+      position: relative;
+      padding-bottom: 1rem;
+      width: 100%;
+      font-size: 3rem;
+      font-weight: bold;
+      color: $cAqua;
+      text-align: center;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $cAqua;
+        border-radius: 10px;
+      }
+    }
+    &-description {
+      & address {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        font-family: sans-serif;
+      }
+    }
+    &-text {
+      font-style: normal;
+      font-variant-ligatures: none;
+      letter-spacing: 0.15em;
+      line-height: 1.75;
+      color: $cBlack;
+
+      & > a {
+        color: $cBlack;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &:nth-child(1){
+        margin-top: 20px;
+      }
+      &:nth-child(2) {
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+  &__privacy-policy {
+    text-align: center;
+    & a {
+      color: $cBlack;
+    }
+  }
+  &__copy {
+    padding: 20px 0;
+    font-size: 1rem;
+    text-align: center;
   }
 }

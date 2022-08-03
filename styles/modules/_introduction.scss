@@ -22,13 +22,18 @@
     height: 85px;
     background-color: $cWhite;
     border-radius: 20px;
-    transition: all .3s;
+    cursor: pointer;
+    transition: 0.3s ease;
     
     
     &:hover {
       transform: translate(1px, 1px);
       &::after {
         opacity: 0;
+      }
+
+      .introduction__li-icon {
+        background-color: $cPink;
       }
     }
     
@@ -42,7 +47,7 @@
       background-color: transparent;
       border-radius: 20px;
       box-shadow: 2px 2px 3px $cGray;
-      transition: all .3s;
+      transition:  hover 0.3s ease;
     }
 
     & a {
@@ -70,7 +75,7 @@
       background-color: $cAqua;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
-
+      transition: all .3s;
       &::after {
         @include arrowIcon($cWhite);
         top: 0;

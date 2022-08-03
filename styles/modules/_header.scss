@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  height: 80px;
+  height: auto;
 }
 
 .header-nav {
@@ -13,16 +13,20 @@
   border-bottom: $borderGray;
 
   &__title{
-    width: 25%;
-    color: $cBlack;
+    padding-left: 10px;
+    width: 50%;
+    color: $cNavy;
+    font-size: 3rem;
+    font-weight: normal;
     // height: 100%;
   }
   &__ul{
-    display: flex;
+    display: none;
+    // display: flex;
     align-items: center;
     justify-self: space-around;
     width: 75%;
-    height: 100%;
+    // height: 100%;
     background-color: white;
   }
   &__li{
@@ -54,6 +58,116 @@
     width: 25%;
     height: 100%;
   }
+
+  &__mobile{
+    &-ul {
+      display: flex;
+      justify-content: flex-end;
+      width: 75%;
+      height: auto;
+      max-height: 80px;
+    }
+    &-li{
+        display: flex;
+        flex-direction: column;
+        width: 80px;
+        height: 80px;
+        background-color: $cBlue;
+        cursor: pointer;
+
+        &-search-item{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width:100%;
+          height: 80px;
+          border-left: 1px solid $cGray;
+          border-right: 1px solid $cGray;
+
+          &__icon {
+            position: relative;
+            width: 100%;
+            height: 50%;
+
+            &::after {
+              @include iconNormal("\f002");
+              top: 0;
+              left: 50%;
+              transform: translate(-50%, 0);
+              font-size: 2rem;
+              color: $cWhite;
+            }
+          }
+
+          &__text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 50%;
+            color: $cWhite;
+          }
+        }
+        
+    }
+    &-menu{
+      &__btn {
+        position: relative;     
+        display: block;
+        width: 80px;
+        height: 50%;
+        color: $cWhite;
+        cursor: pointer;
+
+        &.active {
+          .header-nav__mobile-menu__item {
+            top: 50%;
+            left: 33%;
+            &:nth-child(1) {
+              transform: rotate(45deg);
+            }
+            &:nth-child(2) {
+              transform: scaleX(0%);
+              opacity: 0;
+            }
+            &:nth-child(3) {
+              transform: rotate(135deg);
+            }
+          }
+        }
+      }
+      &__item {
+        display: block;
+        position:absolute;
+        left: 50%;
+        width: 25px;
+        height: 2px;
+        transform: translate(-50%,0);
+        background-color: $cWhite;
+        transition: .5s;
+        
+        &:nth-child(1) {
+          top: 25%;
+        }
+        &:nth-child(2) {
+          top: 50%;
+        }
+        &:nth-child(3) {
+          top: 75%;
+        }
+      }
+      &__text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50%;
+        text-align: center;
+        background-color: $cBlue;
+        color: $cWhite;
+        cursor: pointer;
+      }
+   }
+  }
 }
 
 .mobile-menu {
@@ -63,4 +177,123 @@
   position: fixed;
   z-index: 9;
   display: none;
+}
+
+
+
+.header-nav {
+  &__mobile-container {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-color: $cWhite;
+
+    &__ul {
+      margin-bottom: 50px;
+      padding: 0 20px;
+      width: 100%;
+      height: auto;
+      text-align: center;
+    }
+    &__li {
+      width: 100%;
+      padding: 1.8rem 0;
+      border-bottom: 1px solid $cGray;
+      
+      & a {
+        color: $cBlue;
+        font-size: 1.2rem;
+      }
+    }
+    &__ul-square {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 50px;
+      padding: 0 20px;
+      width: 100%;
+      height: auto;
+    }
+    &__li-square {
+      padding-top: 10px;
+      width: calc(33% - 2px);
+      border-radius: 8px;
+      
+      &:nth-child(1) {
+        background-color: $cPink;
+      }
+      &:nth-child(2) {
+        background-color: $cBrown;
+      }
+      &:nth-child(3) {
+        background-color: $cAqua;
+      }
+      &__icon {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 60px;
+        height: 60px;
+        &.recruit {
+          @include icon('../../icons/recruit01.png');
+        }
+        &.access {
+          @include icon('../../icons/map02.png');
+        }
+        &.chart {
+          @include icon('../../icons/chart01.png');
+        }
+      }
+
+      &__text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        color: $cWhite;
+      }
+    }
+    &__ul-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 50px;
+      padding: 0 20px;
+    }
+    &__li-info {
+      margin-bottom: 10px;
+      padding: 15px 0;
+      width: calc(50% - 5px);
+      border-radius: 30px;
+      background-color: $cAqua;
+    
+      &:nth-child(3),&:nth-child(4) {
+        margin-bottom: 0;
+      }
+      & a {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        padding-left: 1rem;
+        color: $cWhite;
+
+        &::after {
+          right: 1rem;
+          @include circleChevronIcon($cWhite)
+        }
+      }
+    }
+    &__btn {
+      margin: 0 auto;
+      padding: 20px 0;
+      width: 80vw;
+      border-radius: 30px;
+      color: $cWhite;
+      font-weight: bold;
+      background-color: $cBlue;
+    }
+  }
 }

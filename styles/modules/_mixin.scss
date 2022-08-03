@@ -16,6 +16,13 @@
 }
 
 
+@mixin iconNormal ($path) {
+  content:$path;
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+}
+
 @mixin arrowIcon ($color) {
   content:"\f0a9";
   position: absolute;
